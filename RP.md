@@ -205,101 +205,109 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `Math.PI` - la constante π
 
-Description à faire par vos soins...
+En JavaScript, `Math.PI` représente la valeur de la constante mathématique $\pi$ (environ 3.14159).
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+    // Calculer l'aire d'un cercle de rayon r
+    const r = 5
+    const aire = Math.PI * r ** 2
+    console.log("air du cercle = 78,53981634")
 ```
 
 ## `Math.abs()` - la \|valeur absolue\| d'un nombre
 
-Description à faire par vos soins...
+  La valeur absolue d'un nombre est sa distance par rapport à zéro sur la droite numérique, sans tenir compte de son signe.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.abs(-5)); // 5
+console.log(Math.abs(5));  // 5
 ```
 
 ## `Math.pow()` - élever à une puissance
 
-Description à faire par vos soins...
+La méthode `Math.pow()` permet d'élever un nombre à une puissance donnée.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.pow(2, 3)); // 8
+console.log(Math.pow(5, 2)); // 25
 ```
 
 ## `Math.min()` - plus petite valeur
 
-Description à faire par vos soins...
+La méthode `Math.min()` permet de trouver la plus petite valeur parmi une liste de nombres.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.min(1, 2, 3)); // 1
+console.log(Math.min(5, 10, 2)); // 2
 ```
 
 ## `Math.max()` - plus grande valeur
 
-Description à faire par vos soins...
+La méthode `Math.max()` permet de trouver la plus grande valeur parmi une liste de nombres.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.max(1, 2, 3)); // 3
+console.log(Math.max(5, 10, 2)); // 10
 ```
 
 ## `Math.ceil()` - arrondir à la prochaine valeur entière la plus proche
 
-Description à faire par vos soins...
+La méthode `Math.ceil()` permet d'arrondir un nombre à la valeur entière supérieure la plus proche.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.ceil(5.1)); // 6
+console.log(Math.ceil(5.9)); // 6
 ```
 
 ## `Math.floor()` - arrondir à la précédente valeur entière la plus proche
 
-Description à faire par vos soins...
+La méthode `Math.floor()` permet d'arrondir un nombre à la valeur entière inférieure la plus proche.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.floor(5.1)); // 5
+console.log(Math.floor(5.9)); // 5
 ```
 
 ## `Math.round()` - arrondir à la valeur entière la plus proche
 
-Description à faire par vos soins...
+La méthode `Math.round()` permet d'arrondir un nombre à la valeur entière la plus proche.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.round(5.1)); // 5
+console.log(Math.round(5.9)); // 6
 ```
 
 ## `Math.trunc()` - supprime la virgule et retourne la partie entière d'un nombre
 
-Description à faire par vos soins...
+La méthode `Math.trunc()` permet de supprimer la partie décimale d'un nombre et de ne conserver que la partie entière.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.trunc(5.1)); // 5
+console.log(Math.trunc(5.9)); // 5
 ```
 
 ## `Math.sqrt()` - la raçine carrée d'un nombre
 
-Description à faire par vos soins...
+La méthode `Math.sqrt()` permet de calculer la racine carrée d'un nombre.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.sqrt(4)); // 2
+console.log(Math.sqrt(9)); // 3
 ```
+
 
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
-Description à faire par vos soins...
+La méthode `Math.random()` permet de générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris).
+
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.random()); // ex: 0.123456789
+console.log(Math.random() * 10); // ex: 5.678901234
+console.log(Math.floor(Math.random() * 10)); // ex: 5 (nombre entier entre 0 et 9)
+console.log(Math.floor(Math.random() * 10) + 1); // ex: 6 (nombre entier entre 1 et 10)
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -312,20 +320,23 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `JSON.stringify()` - transformer un objet Javascript en JSON
 
-Description à faire par vos soins...
+stringify() permet de convertir un objet JavaScript en une chaîne JSON.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const obj = { nom: "Alice", age: 25 };
+const json = JSON.stringify(obj);
+console.log(json); // {"nom":"Alice","age":25}
 ```
 
 ## `JSON.parse()` - transformer du JSON en objet Javascript
 
-Description à faire par vos soins...
+parse() permet de convertir une chaîne JSON en un objet JavaScript.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const json = '{"nom":"Alice","age":25}';
+const obj = JSON.parse(json);
+console.log(obj.nom); // Alice
+console.log(obj.age); // 25
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -338,20 +349,51 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `split()` - un ciseau qui coupe une chaîne là où un caractère apparaît et produit un tableau
 
-Description à faire par vos soins...
+La méthode `split()` permet de diviser une chaîne de caractères en un tableau de sous-chaînes, en utilisant un séparateur spécifié.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const phrase = "Bonjour tout le monde";
+const mots = phrase.split(" ");
+console.log(mots); // ["Bonjour", "tout", "le", "monde"]
+```
+
+split peut aussi prendre un second argument qui limite le nombre d'éléments dans le tableau résultant.
+
+```javascript
+const phrase = "Bonjour tout le monde";
+const mots = phrase.split(" ", 2);
+console.log(mots); // ["Bonjour", "tout"]
+```
+
+ou sélectionner dans son tableau la chaine de caractères que l'on veut.
+
+```javascript
+const phrase = "Bonjour tout le monde";
+const mots = phrase.split(" ")[2];
+console.log(mots); // "le"
 ```
 
 ## `trim()`, `trimStart()` et `trimEnd()` - épuration des espaces en trop dans une chaîne (trimming)
 
-Description à faire par vos soins...
+La méthode `trim()` permet de supprimer les espaces en trop au début et à la fin d'une chaîne de caractères.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const phrase = "   Bonjour tout le monde   ";
+console.log(phrase.trim()); // "Bonjour tout le monde"
+```
+
+La méthode `trimStart()` permet de supprimer les espaces en trop au début d'une chaîne de caractères.
+
+```javascript
+const phrase = "   Bonjour tout le monde   ";
+console.log(phrase.trimStart()); // "Bonjour tout le monde   "
+```
+
+La méthode `trimEnd()` permet de supprimer les espaces en trop à la fin d'une chaîne de caractères.
+
+```javascript
+const phrase = "   Bonjour tout le monde   ";
+console.log(phrase.trimEnd()); // "   Bonjour tout le monde"
 ```
 
 ## `padStart()` et `padEnd()` - aligner le contenu dans une chaîne de caractères
