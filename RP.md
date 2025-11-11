@@ -456,218 +456,279 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `forEach` - parcourir les éléments d'un tableau
 
-Description à faire par vos soins...
+La méthode `forEach()` permet d'exécuter une fonction pour chaque élément d'un tableau, sans retourner de nouveau tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+fruits.forEach(fruit => {
+  console.log(fruit);
+});
+// Affiche chaque fruit dans la console
 ```
 
 ## `entries()` - parcourir les couples index/valeurs d'un tableau
 
-Description à faire par vos soins...
+La méthode `entries()` retourne un nouvel objet itérable qui contient des paires [index, valeur] pour chaque élément du tableau. Pratique pour parcourir à la fois l'index et la valeur.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+for (const [index, valeur] of fruits.entries()) {
+  console.log(index, valeur);
+}
+// Affiche :
+// 0 "pomme"
+// 1 "banane"
+// 2 "orange"
+```
+
+## `values()` - parcourir les valeurs d'un tableau
+
+La méthode `values()` retourne un objet itérable contenant les valeurs du tableau, utile pour parcourir uniquement les valeurs.
+
+```javascript
+const fruits = ["pomme", "banane", "orange"];
+for (const valeur of fruits.values()) {
+  console.log(valeur);
+}
+// Affiche :
+// "pomme"
+// "banane"
+// "orange"
 ```
 
 ## `in` - parcourir les clés d'un tableau
 
-Description à faire par vos soins...
+La boucle `for...in` permet de parcourir les clés (indices) d'un tableau ou les propriétés d'un objet.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+for (const index in fruits) {
+  console.log(index); // Affiche : 0, 1, 2
+}
 ```
 
 ## `of` - parcourir les valeurs d'un tableau
 
-Description à faire par vos soins...
+La boucle `for...of` permet de parcourir directement les valeurs d'un tableau, de façon simple et lisible.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+// Affiche chaque fruit dans la console
 ```
 
 ## `find()` - premier élément qui satisfait une condition
 
-Description à faire par vos soins...
+La méthode `find()` permet de retourner le premier élément d'un tableau qui satisfait une condition donnée (fonction de test). Si aucun élément ne correspond, elle retourne `undefined`.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 4, 7, 10];
+const premierGrand = nombres.find(n => n > 5);
+console.log(premierGrand); // 7
 ```
 
 ## `findIndex()` - premier index qui satisfait une condition
 
-Description à faire par vos soins...
+La méthode `findIndex()` retourne l'index du premier élément d'un tableau qui satisfait une fonction de test. Retourne -1 si aucun élément ne correspond.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 4, 7, 10];
+const index = nombres.findIndex(n => n > 5);
+console.log(index); // 2
 ```
 
 ## `indexOf()` et `lastIndexOf()` - premier/dernier élément qui correspond
 
-Description à faire par vos soins...
+`indexOf()` retourne l'index de la première occurrence d'une valeur dans un tableau, ou -1 si elle n'est pas trouvée.  
+`lastIndexOf()` fait la même chose mais pour la dernière occurrence.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange", "banane"];
+console.log(fruits.indexOf("banane")); // 1
+console.log(fruits.lastIndexOf("banane")); // 3
 ```
 
-## `push()`, `pop()`, `shift()` et `unshift()` - ajouter/supprime au début/fin dans un tableau
+## `push()`, `pop()`, `shift()` et `unshift()` - ajouter/supprimer au début/fin dans un tableau
 
-Description à faire par vos soins...
+- `push()` ajoute un ou plusieurs éléments à la fin du tableau.
+- `pop()` supprime et retourne le dernier élément du tableau.
+- `shift()` supprime et retourne le premier élément du tableau.
+- `unshift()` ajoute un ou plusieurs éléments au début du tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane"];
+fruits.push("orange");      // ["pomme", "banane", "orange"]
+fruits.pop();               // ["pomme", "banane"]
+fruits.shift();             // ["banane"]
+fruits.unshift("kiwi");     // ["kiwi", "banane"]
 ```
 
 ## `slice()` - ne conserver que certaines lignes d'un tableau
 
-Description à faire par vos soins...
+Permet de créer un nouveau tableau contenant une portion du tableau d'origine, sans le modifier. On précise l'index de début et éventuellement l'index de fin (non inclus).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange", "kiwi"];
+const sousTableau = fruits.slice(1, 3); // ["banane", "orange"]
 ```
 
 ## `splice()` - supprimer/insérer/remplacer des valeurs dans un tableau
 
-Description à faire par vos soins...
+Permet de modifier le contenu d'un tableau en supprimant, ajoutant ou remplaçant des éléments à partir d'un index donné.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+fruits.splice(1, 1); // Supprime "banane" à l'index 1
+// ["pomme", "orange"]
+
+fruits.splice(1, 0, "kiwi"); // Insère "kiwi" à l'index 1
+// ["pomme", "kiwi", "orange"]
+
+fruits.splice(0, 1, "ananas"); // Remplace "pomme" par "ananas"
+console.log(fruits); // ["ananas", "kiwi", "orange"]
 ```
 
 ## `concat()` - joindre deux tableaux
 
-Description à faire par vos soins...
+Permet de fusionner deux ou plusieurs tableaux en un nouveau tableau sans modifier les originaux.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const a = [1, 2];
+const b = [3, 4];
+const c = a.concat(b); // [1, 2, 3, 4]
 ```
 
 ## `join()` - joindre des chaînes de caractères
 
-Description à faire par vos soins...
+La méthode `join()` permet de fusionner tous les éléments d'un tableau en une seule chaîne de caractères, en utilisant un séparateur choisi.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+console.log(fruits.join(", ")); // "pomme, banane, orange"
 ```
 
 ## `keys()` et `values()` - les clés/valeurs d'un objet
 
-Description à faire par vos soins...
+`Object.keys()` retourne un tableau contenant toutes les clés (propriétés) d'un objet.  
+`Object.values()` retourne un tableau contenant toutes les valeurs des propriétés de cet objet.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const obj = { nom: "Alice", age: 25 };
+console.log(Object.keys(obj));   // ["nom", "age"]
+console.log(Object.values(obj)); // ["Alice", 25]
 ```
 
 ## `includes()` - vérifier si une valeur est présente dans un tableau
 
-Description à faire par vos soins...
+La méthode `includes()` permet de savoir si un tableau contient une valeur spécifique. Retourne `true` si la valeur est trouvée, sinon `false`.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+console.log(fruits.includes("banane")); // true
+console.log(fruits.includes("kiwi"));   // false
 ```
 
 ## `every()` et `some()` - vérifier si plusieurs valeurs sont toutes/quelques présentes dans un tableau
 
-Description à faire par vos soins...
+- `every()` teste si **tous** les éléments du tableau satisfont une condition. Retourne `true` si c'est le cas, sinon `false`.
+- `some()` teste si **au moins un** élément du tableau satisfait une condition. Retourne `true` si c'est le cas, sinon `false`.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [2, 4, 6, 8];
+console.log(nombres.every(n => n % 2 === 0)); // true (tous pairs)
+console.log(nombres.some(n => n > 5));        // true (au moins un > 5)
 ```
 
 ## `fill()` - remplir un tableau avec des valeurs
 
-Description à faire par vos soins...
+La méthode `fill()` permet de remplir tout ou partie d'un tableau avec une valeur donnée.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const tableau = [1, 2, 3, 4];
+tableau.fill(0); // [0, 0, 0, 0]
+tableau.fill(5, 1, 3); // [0, 5, 5, 0]
 ```
 
 ## `flat()` - aplatir un tableau
 
-Description à faire par vos soins...
+La méthode `flat()` permet de "aplatir" un tableau contenant des sous-tableaux en un seul niveau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
-```
-
+const tableau = [1, [2, [3, 4]], 5];
+console.log(tableau.flat()); // [1, 2, [3, 4], 5]
+console.log(tableau.flat(2)); // [1, 2, 3, 4, 5]
 ## `sort()` - pour trier un tableau
 
-Description à faire par vos soins...
+La méthode `sort()` permet de trier les éléments d'un tableau selon l'ordre alphabétique ou selon une fonction de comparaison personnalisée.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [3, 1, 4, 2];
+nombres.sort(); // [1, 2, 3, 4] (pour les nombres, attention à la comparaison)
+const mots = ["banane", "pomme", "kiwi"];
+mots.sort(); // ["banane", "kiwi", "pomme"]
 ```
 
 ## `map()` - tableau avec les résultats d'une fonction
 
-Description à faire par vos soins...
+La méthode `map()` crée un nouveau tableau contenant les résultats de l'application d'une fonction à chaque élément du tableau d'origine.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3];
+const doubles = nombres.map(n => n * 2); // [2, 4, 6]
 ```
 
 ## `filter()` - tableau avec les éléments passant un test
 
-Description à faire par vos soins...
+La méthode `filter()` crée un nouveau tableau contenant uniquement les éléments qui passent un test (fonction de filtrage).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3, 4, 5];
+const pairs = nombres.filter(n => n % 2 === 0); // [2, 4]
 ```
 
-## `groupBy()` - regroupe les éléments d'un tableau selon un règle
+## `groupBy()` - regroupe les éléments d'un tableau selon une règle
 
-Description à faire par vos soins...
+La méthode `groupBy()` permet de regrouper les éléments d'un tableau selon une fonction de classement (clé).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const personnes = [
+  { nom: "Alice", age: 25 },
+  { nom: "Bob", age: 30 },
+  { nom: "Charlie", age: 25 }
+];
+const groupes = personnes.groupBy(p => p.age);
+// { 25: [{nom: "Alice", ...}, {nom: "Charlie", ...}], 30: [{nom: "Bob", ...}] }
 ```
 
 ## `flatMap()` - chaînage de map() et flat()
 
-Description à faire par vos soins...
+La méthode `flatMap()` applique une fonction à chaque élément du tableau puis "aplatit" le résultat d'un niveau. Pratique pour transformer et fusionner des sous-tableaux en une seule étape.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3];
+const resultat = nombres.flatMap(n => [n, n * 2]); // [1, 2, 2, 4, 3, 6]
 ```
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
 
-Description à faire par vos soins...
+La méthode `reduce()` parcourt le tableau et combine ses éléments pour produire une seule valeur (somme, produit, objet, etc.).  
+`reduceRight()` fait la même chose mais en partant de la fin du tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3, 4];
+const somme = nombres.reduce((acc, val) => acc + val, 0); // 10
+const concatInverse = nombres.reduceRight((acc, val) => acc + val, ""); // "4321"
 ```
 
 ## `reverse()` - inverser l'ordre du tableau
 
-Description à faire par vos soins...
+La méthode `reverse()` inverse l'ordre des éléments d'un tableau directement (modifie le tableau original).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3];
+nombres.reverse(); // [3, 2, 1]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -676,22 +737,22 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 # Techniques
 
-## ``(backticks) - pour des expressions intelligentes
+## `` (backticks) - pour des expressions intelligentes
 
-Description à faire par vos soins...
+Les backticks (`` ` ``) permettent de créer des chaînes de caractères multi-lignes et d'insérer des variables ou expressions avec `${...}`.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nom = "Alice";
+console.log(`Bonjour ${nom} !`); // Bonjour Alice !
 ```
 
 ## `new Set()` - pour supprimer les doublons
 
-Description à faire par vos soins...
+`Set` est une structure qui ne garde que les valeurs uniques. Pratique pour retirer les doublons d'un tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 2, 3, 3, 3];
+const uniques = [...new Set(nombres)]; // [1, 2, 3]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -750,6 +811,14 @@ ou
 (() => { ... })()
 ```
 
+
+
 # Conclusion
+
+Ce module m'a permis de découvrir et de manipuler les principaux opérateurs, méthodes et techniques de la programmation fonctionnelle. on dispose désormais d’un pense-bête pratique pour écrire du code plus lisible, efficace et moderne.
+
+J'ai bien aimé le contenu du module, même si c'était un peu compliqué par rapport aux autres cours. On verra bien pour l'évaluation...
+
+
 
 > Votre conclusion avec les éléments usuels
