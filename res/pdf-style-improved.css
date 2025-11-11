@@ -1,0 +1,191 @@
+/* Notion-like, sober + pro PDF style for A4 export
+   - Rounded cards
+   - Colored code blocks (Prism-like tokens)
+   - Print-friendly A4 rules
+   - Use local fonts if installed: Inter, Fira Code
+*/
+
+@page {
+  size: A4;
+  margin: 1.5cm 1cm; /* top/bottom left/right (matches settings) */
+}
+
+:root{
+  --bg: #ffffff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #6b5ce8; /* subtle purple */
+  --card: #ffffff;
+  --code-bg: #0b1220; /* dark code background */
+  --code-text: #e6edf3;
+  --border: #e6eef7;
+}
+
+html, body {
+  height: auto;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 12pt;
+  line-height: 1.45;
+}
+
+.markdown-body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0.6cm 0; /* spacing top/bottom inside page */
+  box-sizing: border-box;
+}
+
+/* Headings - clean and slightly heavier */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  color: var(--text);
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.markdown-body h1 { font-size: 20pt; }
+.markdown-body h2 { font-size: 14pt; border-bottom: 1px solid #eef2ff; padding-bottom: 0.25em; }
+.markdown-body h3 { font-size: 12.5pt; }
+
+p { margin: 0 0 0.8em 0; }
+
+/* Cards / Section blocks to give a Notion feel */
+.section-card {
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(15,23,36,0.03), 0 6px 18px rgba(15,23,36,0.06);
+  padding: 0.6em 0.9em;
+  margin: 0.6em 0;
+  border: 1px solid rgba(15,23,36,0.03);
+}
+
+/* Inline code */
+.markdown-body code,
+.markdown-body tt {
+  background: #f1f5f9;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  font-family: "Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1em;
+  border-radius: 10px;
+  overflow: auto;
+  font-family: "Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  margin: 0.6em 0;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+pre code { background: transparent; color: inherit; }
+
+/* Optional line numbers container */
+pre[data-line] { position: relative; }
+
+/* Prism-like token coloring (common token classes) */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata { color: #94a3b8; font-style: italic; }
+.token.punctuation { color: #94a3b8; }
+.token.selector,
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol { color: #fb923c; }
+.token.attr-name,
+.token.function,
+.token.builtin { color: #06b6d4; }
+.token.class-name { color: #7c3aed; }
+.token.keyword { color: #7c3aed; font-weight:600; }
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex { color: #34d399; }
+.token.operator { color: #e2e8f0; }
+
+/* Blockquote */
+blockquote {
+  border-left: 4px solid #e6eef7;
+  background: #fbfbfe;
+  padding: 0.5em 0.9em;
+  border-radius: 8px;
+  color: var(--muted);
+  margin: 0.6em 0;
+}
+
+/* Tables - subtle, rounded */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0.6em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+th, td {
+  padding: 0.5em 0.7em;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th { background: #fbfbfe; font-weight:600; }
+tr:last-child td { border-bottom: none; }
+
+/* Images: centered and max width */
+img {
+  display: block;
+  margin: 0.6em auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Horizontal rule */
+hr { border: none; border-top: 1px dashed #eef2ff; margin: 1em 0; }
+
+/* Prevent awkward page breaks */
+h1, h2, h3, pre, table, blockquote {
+  page-break-inside: avoid;
+}
+
+/* Keep small elements together */
+p, li { orphans: 3; widows: 3; }
+
+/* Print-friendly tweaks: remove shadows for printing if necessary */
+@media print {
+  .section-card { box-shadow: none; border: 1px solid #f0f3f8; }
+  pre { box-shadow: none; }
+}
+
+/* Small helper for callout blocks (notion-like) */
+.callout {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  background: #fbfbfe;
+  border: 1px solid #eef2ff;
+  padding: 0.6em;
+  border-radius: 8px;
+}
+.callout .icon { font-weight:700; color: var(--accent); }
+
+/* Accessibility: focus outlines for links */
+a { color: #0b61a4; text-decoration: none; }
+a:focus, a:active { outline: 2px dashed rgba(107,92,232,0.3); outline-offset: 2px; }
+
+/* small helper to make code blocks look nice when converted by different exporters */
+code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap; }
+
+/* End of stylesheet */
