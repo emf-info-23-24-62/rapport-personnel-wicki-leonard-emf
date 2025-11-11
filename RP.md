@@ -398,11 +398,13 @@ console.log(phrase.trimEnd()); // "   Bonjour tout le monde"
 
 ## `padStart()` et `padEnd()` - aligner le contenu dans une chaîne de caractères
 
-Description à faire par vos soins...
+La méthode `padStart()` permet de compléter une chaîne au début jusqu'à atteindre une longueur donnée, en ajoutant des caractères spécifiés.  
+La méthode `padEnd()` fait la même chose mais à la fin de la chaîne.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const code = "42";
+console.log(code.padStart(5, "0")); // "00042"
+console.log(code.padEnd(5, "_"));   // "42___"
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -421,29 +423,38 @@ console.log('Coucou !'); // Coucou !
 
 ## `console.info()`, `warn()` et `error()` - Afficher un message sur la console (filtrables)
 
-Description à faire par vos soins...
+Permettent d'afficher des messages d'information, d'avertissement ou d'erreur dans la console, chacun avec un style visuel distinct.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.info('Info : tout va bien');
+console.warn('Attention : quelque chose cloche');
+console.error('Erreur : une erreur est survenue');
 ```
 
 ## `console.table()` - Afficher tout un tableau ou un objet sur la console
 
-Description à faire par vos soins...
+Affiche un tableau ou un objet sous forme de tableau dans la console, pratique pour visualiser des données structurées.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme", "banane", "orange"];
+console.table(fruits);
+
+const obj = { nom: "Alice", age: 25 };
+console.table(obj);
 ```
 
 ## `console.time()`, `timeLog()` et `timeEnd()` - Chronométrer une durée d'exécution
 
-Description à faire par vos soins...
+Permettent de mesurer le temps d'exécution d'un bloc de code.  
+- `console.time(label)` démarre le chronomètre avec un nom.
+- `console.timeLog(label)` affiche le temps écoulé depuis le début.
+- `console.timeEnd(label)` arrête le chronomètre et affiche le temps total.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.time("traitement");
+for (let i = 0; i < 1000000; i++) { /* ... */ }
+console.timeLog("traitement"); // Affiche le temps intermédiaire
+console.timeEnd("traitement"); // Affiche le temps total
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
