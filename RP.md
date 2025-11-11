@@ -829,7 +829,3 @@ ou
 Ce module m'a permis de découvrir et de manipuler les principaux opérateurs, méthodes et techniques de la programmation fonctionnelle. on dispose désormais d’un pense-bête pratique pour écrire du code plus lisible, efficace et moderne.
 
 J'ai bien aimé le contenu du module, même si c'était un peu compliqué par rapport aux autres cours. On verra bien pour l'évaluation...
-
-
-
-> Votre conclusion avec les éléments usuels
