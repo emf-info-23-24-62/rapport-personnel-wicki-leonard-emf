@@ -79,9 +79,11 @@
 
 # Introduction
 
-> Votre introduction avec notamment les objectifs opérationnels du module.
+Ce module 323 nous apprends la programmation fonctionnelle en Javascript. Il présente des opérateurs, des fonctions et des techniques utiles pour écrire du code plus propre, plus lisible et plus efficace.
 
-# Opérateurs javascript super-cooool 😎
+Les principales méthode que l'on a appris auparavent sont remplacées par des méthodes plus fonctionnelles, comme `map()`, `filter()`, `reduce()`, pincipalement.
+
+# Opérateurs javascript
 
 ## opérateur `?:`
 
@@ -207,7 +209,6 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 En JavaScript, `Math.PI` représente la valeur de la constante mathématique $\pi$ (environ 3.14159).
 
-
 ```javascript
     // Calculer l'aire d'un cercle de rayon r
     const r = 5
@@ -296,12 +297,9 @@ console.log(Math.sqrt(4)); // 2
 console.log(Math.sqrt(9)); // 3
 ```
 
-
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
 La méthode `Math.random()` permet de générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris).
-
-
 
 ```javascript
 console.log(Math.random()); // ex: 0.123456789
@@ -446,6 +444,7 @@ console.table(obj);
 ## `console.time()`, `timeLog()` et `timeEnd()` - Chronométrer une durée d'exécution
 
 Permettent de mesurer le temps d'exécution d'un bloc de code.  
+
 - `console.time(label)` démarre le chronomètre avec un nom.
 - `console.timeLog(label)` affiche le temps écoulé depuis le début.
 - `console.timeEnd(label)` arrête le chronomètre et affiche le temps total.
@@ -821,8 +820,6 @@ ou
 ```javascript
 (() => { ... })()
 ```
-
-
 
 # Conclusion
 
